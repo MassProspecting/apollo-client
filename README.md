@@ -16,3 +16,10 @@ gem install apollo-client
 require 'apollo-client'
 client = ApolloClient.new(apikey: '<your apollo api key here>')
 ```
+
+## 3. Enrich a Lead
+
+```ruby
+client.get_email(name: 'Rick Lapointe', company: 'USPRO')
+# => 'rick@uspro.com' 
+```

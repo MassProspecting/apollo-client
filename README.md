@@ -1,4 +1,4 @@
-# apollo-client
+# Enrichment
 
 Ruby gem for connecting with Apollo.io.
 
@@ -7,19 +7,26 @@ Ruby gem for connecting with Apollo.io.
 1. Install the gem.
 
 ```bash
-gem install apollo-client
+gem install blackstack-enrichment
 ```
 
 2. Create a client.
 
 ```ruby
 require 'apollo-client'
-client = ApolloClient.new(apikey: '<your apollo api key here>')
+client = BlackStack::Enrichment.new(apollo_apikey: '<your apollo api key here>')
 ```
 
-## 3. Enrich a Lead
+## 3. Find Person from LinkedIn URL
 
 ```ruby
-client.get_email(name: 'Rick Lapointe', company: 'USPRO')
-# => 'rick@uspro.com' 
+client.find_person_email_from_linkedin_url(url: 'https://www.linkedin.com/in/richardglapointe')
+=> richard@uspro.com
+```
+
+## 4. Find Person from Name and Company
+
+```ruby
+client.find_person_from_name_and_company(name: 'Richard LaPointe', company: 'USPRO')
+=> richard@uspro.com
 ```

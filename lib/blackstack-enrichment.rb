@@ -74,10 +74,10 @@ module BlackStack
                     --header "Authorization: Bearer #{@findymail_apikey}" \
                     --header "Content-Type: application/json" \
                     --header "Accept: application/json" \
-                    --data \"{
-                        \"name\": \"#{name}\",
-                        \"domain\": \"#{domain}\"
-                    }\"`
+                    --data "{
+                        \\"name\\": \\"#{name}\\",
+                        \\"domain\\": \\"#{domain}\\"
+                    }"`
                 j = JSON.parse(ret)
                 raise "Error: #{j['error']}" if j['error']
                 return nil if j['contact'].nil?

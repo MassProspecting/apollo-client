@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
       'lib/blackstack-enrichmen.rb',
       'blackstack-enrichment.gemspec'
     ]
-    s.homepage    = 'https://github.com/leandrosardi/adspower-client'
+    s.homepage    = 'https://github.com/leandrosardi/blackstack-enrichment'
     s.license     = 'MIT'
     s.add_runtime_dependency 'json', '~> 2.6.3', '>= 2.6.3'
 end

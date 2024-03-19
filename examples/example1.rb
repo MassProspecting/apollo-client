@@ -1,5 +1,5 @@
 require 'config'
-require 'lib/enrichment'
+require 'lib/blackstack-enrichment'
 
 client = BlackStack::Enrichment.new(apollo_apikey: APOLLO_API_KEY)
 

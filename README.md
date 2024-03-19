@@ -15,21 +15,21 @@ gem install blackstack-enrichment
 You can define your [Apollo](https://www.apollo.io) API key:
 
 ```ruby
-require 'apollo-client'
+require 'blackstack-enrichment'
 client = BlackStack::Enrichment.new(apollo_apikey: '<your apollo api key here>')
 ```
 
 You can define your [FindyMail](https://findymail.com) API key:
 
 ```ruby
-require 'apollo-client'
+require 'blackstack-enrichment'
 client = BlackStack::Enrichment.new(findymail_apikey: '<your findymail api key here>')
 ```
 
 You can define both:
 
 ```ruby
-require 'apollo-client'
+require 'blackstack-enrichment'
 client = BlackStack::Enrichment.new(
     apollo_apikey: '<your apollo api key here>',
     findymail_apikey: '<your findymail api key here>',

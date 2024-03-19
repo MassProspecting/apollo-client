@@ -1,4 +1,3 @@
-require 'pry'
 require 'json'
 
 module BlackStack
@@ -79,7 +78,6 @@ module BlackStack
                         \"name\": \"#{name}\",
                         \"domain\": \"#{domain}\"
                     }\"`
-binding.pry
                 j = JSON.parse(ret)
                 raise "Error: #{j['error']}" if j['error']
                 return nil if j['contact'].nil?

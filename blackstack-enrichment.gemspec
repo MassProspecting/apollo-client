@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
     s.authors     = ["Leandro Daniel Sardi"]
     s.email       = 'leandro@connectionsphere.com'
     s.files       = [
-      'lib/blackstack-enrichmen.rb',
+      'lib/blackstack-enrichment.rb',
       'blackstack-enrichment.gemspec'
     ]
     s.homepage    = 'https://github.com/leandrosardi/blackstack-enrichment'

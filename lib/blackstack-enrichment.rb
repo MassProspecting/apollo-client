@@ -27,6 +27,7 @@ module BlackStack
                 ]
             }' "https://api.apollo.io/api/v1/people/bulk_match"`
             j = JSON.parse(ret)
+            raise "Error: #{j['error']}" if j['error']
             raise "Error: #{j['error_message']}" if j['error_message']
             raise "Error: #{j['error_code']}" if j['error_code']
             match = j['matches'].first

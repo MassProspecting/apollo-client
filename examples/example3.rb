@@ -1,3 +1,8 @@
+# Create a file `config.rb` in the $RUBYLIB directory.
+# Define the constant APOLLO_API_KEY there.
+#
+
+require 'pry'
 require 'config'
 require 'lib/blackstack-enrichment'
 

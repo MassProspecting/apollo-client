@@ -158,7 +158,7 @@ module BlackStack
                 raise "Error: #{j['error_code']}" if j['error_code']
                 raise "Error: #{j['error']}" if j['error']
 
-                next if j['person']  
+                next if j['person'].nil?
                 k = j['person'] if j['person']
 
                 # append emails and phone numbers to the hash
@@ -171,6 +171,8 @@ module BlackStack
                     'value' => o['raw_number'],
                     'type' => o['type']
                 } } if k['phone_numbers']
+
+                i['raw'] = k
 
                 b << i
             }

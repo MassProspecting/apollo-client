@@ -174,7 +174,7 @@ module BlackStack
 
                 b << i
             }
-binding.pry
+
             # return
             b
         end # def find_persons_from_title_and_domain

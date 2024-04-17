@@ -2,6 +2,13 @@
 
 Ruby gem for connecting with Apollo.io.
 
+**Outline:**
+
+1. [Getting Started](#1-getting-started)
+2. [Find Person from LinkedIn URL](#2-find-person-from-linkedin-url)
+3. [Find Person from Name and Company](#3-find-person-from-name-and-company)
+4. [Find Person from Name and Domain](#4-find-person-from-name-and-domain)
+
 ## 1. Getting Started
 
 1. Install the gem.
@@ -36,7 +43,7 @@ client = BlackStack::Enrichment.new(
 )
 ```
 
-## 3. Find Person from LinkedIn URL
+## 2. Find Person from LinkedIn URL
 
 ```ruby
 client.find_person_email_from_linkedin_url(url: 'https://www.linkedin.com/in/richardglapointe')
@@ -45,7 +52,7 @@ client.find_person_email_from_linkedin_url(url: 'https://www.linkedin.com/in/ric
 
 The Apollo API Key is mandatory for this operation.
 
-## 4. Find Person from Name and Company
+## 3. Find Person from Name and Company
 
 ```ruby
 client.find_person_from_name_and_company(name: 'Richard LaPointe', company: 'USPRO')

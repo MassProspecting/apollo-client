@@ -69,3 +69,8 @@ client.find_person_from_name_and_domain(name: 'Richard LaPointe', domain: 'uspro
 ```
 
 Either Apollo or FindyMail API Key is mandatory for this operation.
+
+## External Links
+
+- [Apollo API Reference](https://knowledge.apollo.io/hc/en-us/articles/4416173158541-Use-the-Apollo-REST-API).
+- [Findymail API Reference](https://app.findymail.com/docs).

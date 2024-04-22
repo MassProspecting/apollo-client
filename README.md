@@ -79,7 +79,7 @@ puts "#{b.first['first_name']}, #{b.first['last_name']}, #{b.first['title']}, #{
 => Steve, Tindale, Chief Executive Officer, stindale@benesch.com
 ```
 
-Either Apollo or FindyMail API Key is mandatory for this operation.
+The Apollo API Key is mandatory for this operation.
 
 
 ## External Links

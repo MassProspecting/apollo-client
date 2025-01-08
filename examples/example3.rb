@@ -6,9 +6,9 @@ require 'pry'
 require_relative '../config'
 require_relative '../lib/apollo-client'
 
-client = BlackStack::Enrichment.new(
-    #apollo_apikey: APOLLO_API_KEY,
-    findymail_apikey: FINDYMAIL_API_KEY,
+client = ApolloClient.new(
+    apollo_apikey: APOLLO_API_KEY,
+    #findymail_apikey: FINDYMAIL_API_KEY,
 )
 
-p client.find_person_from_name_and_domain(name: 'Richard LaPointe', domain: 'uspro.net')
+p client.find_person_from_name_and_domain(name: 'Evans Niga', domain: 'gohighlevel.com')

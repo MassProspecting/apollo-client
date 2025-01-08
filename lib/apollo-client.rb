@@ -1,7 +1,7 @@
 require 'json'
 
-module BlackStack
-    class Enrichment
+#module BlackStack
+    class ApolloClient
         @@apollo_apikey = nil
 
         def initialize(h={})
@@ -181,5 +181,5 @@ module BlackStack
             b
         end # def find_persons_from_title_and_domain
 
-    end # class Enrichment
-end # module BlackStack
+    end # class ApolloClient
+#end # module BlackStack

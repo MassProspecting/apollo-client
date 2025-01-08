@@ -1,4 +1,4 @@
-# Enrichment
+# Apollo-Client
 
 Ruby gem for connecting with Apollo.io.
 
@@ -15,7 +15,7 @@ Ruby gem for connecting with Apollo.io.
 1. Install the gem.
 
 ```bash
-gem install blackstack-enrichment
+gem install apollo-client
 ```
 
 2. Create a client.
@@ -23,25 +23,8 @@ gem install blackstack-enrichment
 You can define your [Apollo](https://www.apollo.io) API key:
 
 ```ruby
-require 'blackstack-enrichment'
-client = BlackStack::Enrichment.new(apollo_apikey: '<your apollo api key here>')
-```
-
-You can define your [FindyMail](https://findymail.com) API key:
-
-```ruby
-require 'blackstack-enrichment'
-client = BlackStack::Enrichment.new(findymail_apikey: '<your findymail api key here>')
-```
-
-You can define both:
-
-```ruby
-require 'blackstack-enrichment'
-client = BlackStack::Enrichment.new(
-    apollo_apikey: '<your apollo api key here>',
-    findymail_apikey: '<your findymail api key here>',
-)
+require 'apollo-client'
+client = ApolloClient.new(apollo_apikey: '<your apollo api key here>')
 ```
 
 ## 2. Find Person from LinkedIn URL
@@ -50,8 +33,6 @@ client = BlackStack::Enrichment.new(
 client.find_person_email_from_linkedin_url(url: 'https://www.linkedin.com/in/richardglapointe')
 => richard@uspro.net
 ```
-
-The Apollo API Key is mandatory for this operation.
 
 ## 3. Find Person from Name and Company
 
@@ -62,25 +43,10 @@ client.find_person_from_name_and_company(name: 'Richard LaPointe', company: 'USP
 
 The Apollo API Key is mandatory for this operation.
 
-## 4. Find Person from Name and Domain
+## Further Work
 
-```ruby
-client.find_person_from_name_and_domain(name: 'Richard LaPointe', domain: 'uspro.net')
-=> richard@uspro.net
-```
-
-Either Apollo or FindyMail API Key is mandatory for this operation.
-
-## 5. Find Person from Job Position and Domain
-
-```ruby
-b = client.find_persons_from_title_and_domain(titles: ['CEO', 'Owner', 'President'], domain: 'benesch.com')
-puts "#{b.first['first_name']}, #{b.first['last_name']}, #{b.first['title']}, #{b.first['emails'].first}".green
-=> Steve, Tindale, Chief Executive Officer, stindale@benesch.com
-```
-
-The Apollo API Key is mandatory for this operation.
-
+- Method `find_person_from_name_and_domain`.
+- Method `find_persons_from_title_and_domain`.
 
 ## External Links
 

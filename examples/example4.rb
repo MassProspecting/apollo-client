@@ -16,7 +16,7 @@ a = [
     'alliancehealthplan.org',
 ]
 
-client = BlackStack::Enrichment.new(
+client = ApolloClient.new(
     apollo_apikey: APOLLO_API_KEY,
     #findymail_apikey: FINDYMAIL_API_KEY,
 )

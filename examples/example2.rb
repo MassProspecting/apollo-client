@@ -3,8 +3,8 @@
 #
 
 require 'pry'
-require 'config'
-require 'lib/blackstack-enrichment'
+require_relative '../config'
+require_relative '../lib/apollo-client'
 
 client = BlackStack::Enrichment.new(apollo_apikey: APOLLO_API_KEY)
 

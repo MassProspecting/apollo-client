@@ -3,8 +3,9 @@
 #
 
 require 'pry'
-require 'config'
-require 'lib/blackstack-enrichment'
+require_relative '../config'
+require_relative '../lib/apollo-client'
+
 require 'colorize'
 
 a = [
@@ -25,5 +26,3 @@ a.each { |d|
     b = client.find_persons_from_title_and_domain(titles: ['CEO', 'Owner', 'President'], domain: d)
     puts b.size==0 ? '0'.red : "#{b.first['first_name']} #{b.first['last_name']} #{b.first['title']} #{b.first['emails'].first}".green
 }
-
-

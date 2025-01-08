@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
-    s.name        = 'blackstack-enrichment'
-    s.version     = '1.0.3'
-    s.date        = '2024-04-22'
-    s.summary     = "Ruby library for connecting some enrichment services like Apillo or FindyMail."
-    s.description = "Ruby library for connecting some enrichment services like Apillo or FindyMail."
+    s.name        = 'apollo-client'
+    s.version     = '1.0.4'
+    s.date        = '2025-01-08'
+    s.summary     = "Ruby library for connecting some enrichment services like Apillo."
+    s.description = "Ruby library for connecting some enrichment services like Apillo."
     s.authors     = ["Leandro Daniel Sardi"]
     s.email       = 'leandro@connectionsphere.com'
     s.files       = [

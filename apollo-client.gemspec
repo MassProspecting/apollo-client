@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
     s.authors     = ["Leandro Daniel Sardi"]
     s.email       = 'leandro@connectionsphere.com'
     s.files       = [
-      'lib/blackstack-enrichment.rb',
-      'blackstack-enrichment.gemspec'
+      'lib/apollo-client.rb',
+      'apollo-client.gemspec'
     ]
     s.homepage    = 'https://github.com/leandrosardi/blackstack-enrichment'
     s.license     = 'MIT'

@@ -40,10 +40,11 @@ require 'json'
         # Reference: https://apolloio.github.io/apollo-api-docs/?shell#enrichment-api
         #
         # 
-        def find_person_from_name_and_company(name:, company:)
+        def find_person_from_name_and_company(name:, company:, return_only_email: true, reveal_personal_emails: true)
             raise 'Error: apollo_apikey is required for find_person_from_name_and_company operation.' if @apollo_apikey.nil?
-
-            ret = `curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
+#binding.pry if name == 'Greg Shugar'
+=begin
+            ret = `curl -s -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
                 "api_key": "#{@apollo_apikey}",
                 "reveal_personal_emails": true,
                 "details": [
@@ -53,13 +54,60 @@ require 'json'
                     }
                 ]
             }' "https://api.apollo.io/api/v1/people/bulk_match"`
+=end
+            # Define the URI
+            uri = URI.parse("https://api.apollo.io/api/v1/people/bulk_match")
+#            uri = URI.parse("https://api.apollo.io/api/v1/people/match")
+#return if name != 'Dana Watkins'
+#binding.pry 
+            # Create the HTTP object and enable SSL
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = (uri.scheme == "https")
+
+            # Create the POST request
+            request = Net::HTTP::Post.new(uri.path, {
+                'Content-Type' => 'application/json',
+                'Cache-Control' => 'no-cache'
+            })
+
+            # Prepare the request body as a Ruby hash
+            body = {
+                api_key: @apollo_apikey,
+#                reveal_personal_emails: reveal_personal_emails,
+reveal_personal_emails: false,
+                details: [{
+#id: '679a74d761fb9f01b073d332'
+#                    name: 'Dana Watkins',
+first_name: 'Dana',
+last_name: 'Watkins',
+#title: 'owner',
+                    organization_name: company
+                }]
+            }
+
+            # Set the request body as JSON
+            request.body = body.to_json
+
+            # Execute the request
+            response = http.request(request)
+
+            # Handle the response
+            if response.is_a?(Net::HTTPSuccess)
+                ret = response.body
+                #puts "Request successful."
+            else
+                raise "Request failed. Code: #{response.code}. Message: #{response.message}."
+                # Optionally, handle different response codes here
+            end
+
             j = JSON.parse(ret)
             raise "Error: #{j['error_message']}" if j['error_message']
             raise "Error: #{j['error_code']}" if j['error_code']
             raise "Error: #{j['error']}" if j['error']
+
             match = j['matches'].first
             return nil if match.nil?
-            match['email']
+            return return_only_email ? match['email'] : match
         end # def find_person_from_name_and_company
 
         # Retrieve the email of a person from his name and company.
